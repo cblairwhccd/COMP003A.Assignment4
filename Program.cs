@@ -3,6 +3,7 @@
 class Program
 {
     private const int MAX_STEPS = 4; /* Maximum no. of steps in routine */
+    private const int RESTRICTED_STEP = 3; /* Restricted step number in routine */
 
     static void Main()
     {
@@ -31,10 +32,19 @@ class Program
                     else /* Perform step */
                     {
                         step++;
-                        Console.WriteLine($"Routine step {step} completed.");
+                        /* The attempted step was restricted, so it was not performed. */
+                        if (step == RESTRICTED_STEP)
+                        {
+                            Console.WriteLine($"Step {step} is restricted and was skipped.");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Routine step {step} completed.");
+                        }
                     }
                     break;
                 case "2": /* View progress */
+                    Console.WriteLine($"Current progress: {step} {(step == 1 ? "step" : "steps")} completed.");
                     break;
                 case "3": /* Exit */
                     /* Cannot use `break` to leave the loop here, so use a boolean variable instead */
