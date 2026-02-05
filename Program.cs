@@ -4,6 +4,9 @@ class Program
 {
     static void Main()
     {
+        /* No. steps of routine completed */
+        int step = 0;
+
         /* Show menu options */
         Console.WriteLine("1. Start/Continue Routine");
         Console.WriteLine("2. View Progress");
@@ -18,6 +21,8 @@ class Program
             switch (Console.ReadLine())
             {
                 case "1": /* Do routine step */
+                    step++; /* Perform step */
+                    Console.WriteLine($"Routine step {step} completed.");
                     break;
                 case "2": /* View progress */
                     break;
