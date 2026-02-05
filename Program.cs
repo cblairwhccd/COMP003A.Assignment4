@@ -52,5 +52,8 @@ class Program
                     break;
             }
         }
+
+        /* Show message indicating program end */
+        Console.WriteLine("Program ended.");
     }
 }
